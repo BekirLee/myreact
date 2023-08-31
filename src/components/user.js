@@ -2,17 +2,21 @@ import React, { Component } from 'react'
 
 export default class user extends Component {
     render() {
+
+        // destructing
+        const { name, profession, uni } = this.props;
+
         return (
             <div>
                 <ul>
                     <li>
-                        name:{this.props.name}
+                        name:{name}
                     </li>
                     <li>
-                        Profession:{this.props.profession}
+                        Profession:{profession}
                     </li>
                     <li>
-                        University:{this.props.uni}
+                        University:{uni}
                     </li>
                 </ul>
             </div>

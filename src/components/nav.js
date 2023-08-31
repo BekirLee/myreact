@@ -1,13 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types" 
 
-function Navbar() {
+function Navbar(props) {
     return (
         <div className="header">
             <h1>
-                Hello world!
+                {props.text}
             </h1>
         </div>
     )
+}
+
+Navbar.prototype = {
+    text: PropTypes.string.isRequired
 }
 
 export default Navbar;
