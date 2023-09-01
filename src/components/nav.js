@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types" 
+import PropTypes from "prop-types"
 
 function Navbar(props) {
     return (
@@ -11,8 +11,12 @@ function Navbar(props) {
     )
 }
 
-Navbar.prototype = {
+Navbar.proptype = {
     text: PropTypes.string.isRequired
+}
+
+Navbar.defaultProps = {
+    text: "default app"
 }
 
 export default Navbar;

@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './components/nav';
 
 
+
+
 function App() {
   return (
     <div className="App">
@@ -22,9 +24,11 @@ function App() {
         profession="Teacher"
         uni="Sheki"
       />
-      <Navbar text="Hello world !" />
+      <Navbar  />
     </div>
   );
 }
+
+
 
 export default App;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-export default class user extends Component {
+
+class User extends Component {
     render() {
 
         // destructing
@@ -23,3 +25,17 @@ export default class user extends Component {
         )
     }
 }
+
+User.defaultProps = {
+    name: "no info",
+    profession: "no info",
+    uni: "no info"
+}
+
+User.propTypes = {
+    name: PropTypes.string.isRequired,
+    profession: PropTypes.string.isRequired,
+    uni: PropTypes.string.isRequired,
+}
+
+export default User;
