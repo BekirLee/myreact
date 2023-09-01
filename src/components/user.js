@@ -3,32 +3,40 @@ import PropTypes from 'prop-types'
 
 
 class User extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isVisible: false
-        }
+
+    state = {
+        isVisible: true
     }
+
+    onClick = (e) => {
+        console.log(this);
+    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         isVisible: false
+    //     }
+    // }
     render() {
 
         // destructing
         const { name, profession, uni } = this.props;
-        const {isVisible} = this.state;
+        const { isVisible } = this.state;
 
         return (
             <div className='container'>
                 <div className='card'>
-                    <div className='card=header'>
+                    <div className='card=header' onClick={this.onClick}>
                         {name}
                     </div>
 
                     {
-                        isVisible ? 
-                        <div className='card-body'>
-                            {profession}
-                            <br></br>
-                            {uni}
-                        </div> : null
+                        isVisible ?
+                            <div className='card-body'>
+                                {profession}
+                                <br></br>
+                                {uni}
+                            </div> : null
                     }
 
                 </div>
