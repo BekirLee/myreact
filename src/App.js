@@ -24,7 +24,6 @@ function App() {
         profession="Teacher"
         uni="Sheki"
       />
-      <Navbar  />
     </div>
   );
 }

@@ -3,24 +3,35 @@ import PropTypes from 'prop-types'
 
 
 class User extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isVisible: false
+        }
+    }
     render() {
 
         // destructing
         const { name, profession, uni } = this.props;
+        const {isVisible} = this.state;
 
         return (
-            <div>
-                <ul>
-                    <li>
-                        name:{name}
-                    </li>
-                    <li>
-                        Profession:{profession}
-                    </li>
-                    <li>
-                        University:{uni}
-                    </li>
-                </ul>
+            <div className='container'>
+                <div className='card'>
+                    <div className='card=header'>
+                        {name}
+                    </div>
+
+                    {
+                        isVisible ? 
+                        <div className='card-body'>
+                            {profession}
+                            <br></br>
+                            {uni}
+                        </div> : null
+                    }
+
+                </div>
             </div>
         )
     }
