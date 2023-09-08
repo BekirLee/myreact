@@ -1,33 +1,57 @@
 import logo from './logo.svg';
-import User from "./components/user"
 import './App.css';
-import Navbar from './components/nav';
+import { Component } from 'react';
+import Users from './components/users';
+import User from './components/user';
 
+class APP extends Component {
 
+  state = {
 
+    users: [
 
-function App() {
-  return (
-    <div className="App">
-      <User
-        name="Nihad Bakirli"
-        profession="IT"
-        uni="AzTU"
-      />
-      <User
-        name="Vuqar Bakirov"
-        profession="Teacher"
-        uni="Sheki"
-      />
-      <User
-        name="Humay Bakirov"
-        profession="Teacher"
-        uni="Sheki"
-      />
-    </div>
-  );
+      {
+        id: 1,
+        name: "Nihad",
+        profession: "IT",
+        uni: "aztu"
+      },
+      {
+        id: 2,
+        name: "Vuqar",
+        profession: "Teacher",
+        uni: "Sheki"
+      },
+      {
+        id: 3,
+        name: "Humay",
+        profession: "Teacher",
+        uni: "Sheki"
+      }
+    ]
+  }
+  render() {
+    return (
+      <div className="App">
+        <Users
+          users={this.state.users}
+        />
+      </div>
+    );
+
+  }
+
 }
 
 
+export default APP;
 
-export default App;
+
+
+
+
+
+
+
+
+

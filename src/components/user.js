@@ -5,11 +5,15 @@ import PropTypes from 'prop-types'
 class User extends Component {
 
     state = {
-        isVisible: true
+        isVisible: false
     }
 
     onClick = (e) => {
-        console.log(this);
+        this.setState(
+            {
+                isVisible: !this.state.isVisible
+            }
+        )
     }
     // constructor(props) {
     //     super(props);
