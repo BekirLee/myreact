@@ -6,30 +6,7 @@ import User from './components/user';
 
 class APP extends Component {
 
-  state = {
 
-    users: [
-
-      {
-        id: 1,
-        name: "Nihad",
-        profession: "IT",
-        uni: "aztu"
-      },
-      {
-        id: 2,
-        name: "Vuqar",
-        profession: "Teacher",
-        uni: "Sheki"
-      },
-      {
-        id: 3,
-        name: "Humay",
-        profession: "Teacher",
-        uni: "Sheki"
-      }
-    ]
-  }
   render() {
     return (
       <div className="App">
