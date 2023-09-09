@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 class User extends Component {
 
     state = {
-        isVisible: false
+        isVisible: true
     }
 
     onClick = (e) => {
