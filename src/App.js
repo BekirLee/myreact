@@ -10,9 +10,7 @@ class APP extends Component {
   render() {
     return (
       <div className="App">
-        <Users
-          users={this.state.users}
-        />
+        <Users />
       </div>
     );
 
