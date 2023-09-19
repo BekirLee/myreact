@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 const UserContext = React.createContext();
 // provider,consumer
 
+
 export class UserProvider extends Component {
     state = {
 
@@ -14,18 +15,6 @@ export class UserProvider extends Component {
                 profession: "IT",
                 uni: "aztu"
             },
-            {
-                id: 2,
-                name: "Vuqar",
-                profession: "Teacher",
-                uni: "Sheki"
-            },
-            {
-                id: 3,
-                name: "Humay",
-                profession: "Teacher",
-                uni: "Sheki"
-            }
         ]
     }
     render() {

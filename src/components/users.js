@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import User from './user';
 import UserConsumer from './context';
 
+
 class Users extends Component {
     render() {
         <UserConsumer>
