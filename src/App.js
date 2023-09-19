@@ -11,9 +11,7 @@ class APP extends Component {
         <Users />
       </div>
     );
-
   }
-
 }
 
 
