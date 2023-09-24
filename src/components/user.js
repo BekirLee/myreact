@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import UserConsumer from './context'
 
 class User extends Component {
 
     state = {
-        isVisible: true
+        isVisible: true,
+        isActive: true  
     }
 
     onClick = (e) => {
@@ -16,31 +17,79 @@ class User extends Component {
         )
     }
 
+    deletingEvent = (dispatch, e) => {
+        // e.stopPrepagaion();
+        const { id } = this.props;
+        this.setState({
+            isActive: false
+        })
+        dispatch({ type: "delete", payload: { id } })
+    }
+
     render() {
 
         // destructing
         const { name, profession, uni } = this.props;
         const { isVisible } = this.state;
+        const { isActive } = this.state;
 
         return (
-            <div className='container'>
-                <div className='card'>
-                    <div className='card=header' onClick={this.onClick}>
-                        {name}
-                    </div>
+            < UserConsumer >
+                {
+                    value => {
+                        const { dispatch } = value;
+                        return (
+                            <>
+                                {
+                                    isActive ?
+                                        < div className='container'>
+                                            <div className='card'>
+                                                <div className='card=header' onClick={this.onClick}>
+                                                    {name}
+                                                    <i className="fa-solid fa-trash" onClick={this.deletingEvent.bind(this, dispatch)}></i>
+                                                </div>
 
-                    {
-                        isVisible ?
-                            <div className='card-body'>
-                                {profession}
-                                <br></br>
-                                {uni}
-                            </div> : null
+                                                {
+                                                    isVisible ?
+                                                        <div className='card-body'>
+                                                            {profession}
+                                                            <br></br>
+                                                            {uni}
+                                                        </div> : null
+                                                }
+
+                                            </div>
+                                        </div > : null
+                                }
+                            </>
+                        )
+
                     }
+                }
 
-                </div>
-            </div>
+            </UserConsumer >
         )
+
+        // return (
+        //     <div className='container'>
+        //         <div className='card'>
+        //             <div className='card=header' onClick={this.onClick}>
+        //                 {name}
+        //                 <i className="fa-solid fa-trash" onClick={this.deletingEvent.bind(this, dispatch)}></i>
+        //             </div>
+
+        //             {
+        //                 isVisible ?
+        //                     <div className='card-body'>
+        //                         {profession}
+        //                         <br></br>
+        //                         {uni}
+        //                     </div> : null
+        //             }
+
+        //         </div>
+        //     </div>
+        // )
     }
 }
 
